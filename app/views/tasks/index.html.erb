@@ -1,0 +1,15 @@
+<p>This is my index page associated with Tasks controller</p>
+
+<p>Directs users to the list of all tasks. Each task name in the list should link to a show action that will render a new view for the user.</p>
+</br>
+
+<p>
+  <% @task_list.each_with_index do |t, i| %>
+  <li>
+    <%= link_to t, tasks_path + "/#{i}" %></li>
+  </br>
+  <% end %>
+</p>
+
+
+<%#<%= link_to "About Me", "/profile" %>
