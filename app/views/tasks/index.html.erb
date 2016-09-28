@@ -6,7 +6,9 @@
 <p>
   <% @task_list.each_with_index do |t, i| %>
   <li>
-    <%= link_to t, tasks_path + "/#{i}" %></li>
+    <%# link_to t, tasks_path + "/#{i}" %>
+    <%= link_to t, task_path(i) %>
+  </li>
   </br>
   <% end %>
 </p>
