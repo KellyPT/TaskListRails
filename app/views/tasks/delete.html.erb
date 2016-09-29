@@ -1,4 +1,4 @@
-<%= form_for @task do |t| %>
+<%= form_for @task, method: :delete do |t|  %>
 
   <%= t.label :title %>
   <%= t.text_field :title %>
@@ -20,6 +20,9 @@
   <%= t.text_field :completed_at %>
   </br>
   </br>
+
+  <p> If you want to delete this record, press Submit</p>
+
   <%= t.submit "Submit" %>
 
 <% end %>
