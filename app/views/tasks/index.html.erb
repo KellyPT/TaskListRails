@@ -4,14 +4,19 @@
 </br>
 
 <p>
-  <% @task_list.each_with_index do |t, i| %>
+  <%# @task_list.each_with_index do |t, i| %>
+  <% @tasks.each do |t| %>
   <li>
     <%# link_to t, tasks_path + "/#{i}" %>
-    <%= link_to t, task_path(i) %>
+    <%# link_to t, task_path(i) %>
+    
+    <%= "Task #{t.id}: #{t.title}" %>
+    <%= link_to "Find it here", task_path(t.id) %>
   </li>
   </br>
   <% end %>
 </p>
 
+<%= link_to "Create a new Task entry here", tasks_new_path %>
 
 <%#<%= link_to "About Me", "/profile" %>

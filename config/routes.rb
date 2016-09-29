@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   get '/tasks' => 'tasks#index'
 
+  get '/tasks/new' => 'tasks#new'
+
   get '/tasks/:id', to: 'tasks#show', as: 'task'
+
+  post '/tasks' => 'tasks#create'
 
   # get '/tasks/1' => 'tasks#show'
   # get '/tasks/2' => 'tasks#show'

@@ -1,16 +1,27 @@
-<p>
+<!-- <p>
   This is the params[:id]
+</p> -->
+
+<!-- <p>
+  <%# @task_id %>
 </p>
 
 <p>
-  <%= @task_id %>
-</p>
-
-<p>
-  <% t = @task_details[@task_id] %>
-  <li>Name: <%= t[:name] %></li>
-  <li>Description: <%= t[:description] %></li>
-  <li>Completion Status: <%= t[:completion_status] %></li>
-  <li>Completed Date:<%= t[:completed_date] %></li>
+  <%# t = @task_details[@task_id] %>
+  <li>Name: <%# t[:name] %></li>
+  <li>Description: <%# t[:description] %></li>
+  <li>Completion Status: <%# t[:completion_status] %></li>
+  <li>Completed Date:<%# t[:completed_date] %></li>
   </br>
-</p>
+</p> -->
+
+<h2>Task</h2>
+
+<ul>
+  <li>ID: <%= @task.id %> </li>
+  <li>Title: <%= @task.title %></li>
+  <li>Name: <%= @task.name %></li>
+  <li>Description: <%= @task.description %></li>
+  <li>Completion Status: <%= @task.completion_status %></li>
+  <li>Completion Date: <%= @task.completed_at %></li>
+</ul>
