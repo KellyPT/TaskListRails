@@ -4,7 +4,7 @@
 
 <p>
   <% @tasks.each do |t| %>
-  <h3><%= "Task #{t.id}: #{t.name}" %></h3>
+  <h3><%= "Task #{t.id}: #{t.title}" %></h3>
   <li><%= link_to "Details", task_path(t.id) %></li>
   <li><%= link_to "Edit", task_edit_path(t) %></li>
   <li><%= link_to "Delete", task_delete_path(t) %></li>
