@@ -1,15 +1,24 @@
-<%= form_for @task, method: :patch do |t| %>
+<h2>EDIT: </h2>
 
+<p>
+  <%= link_to "Return to Homepage", tasks_path %>
+</p>
+
+<p>
+  <%= link_to "Delete this Task entry", task_delete_path %>
+</p>
+
+<%= form_for @task, method: :patch do |t| %>
+  <%= t.label :name %>
+  <%= t.text_field :name%>
+  </br>
+  </br>
   <%= t.label :id %>
   <%= t.text_field :id %>
   </br>
   </br>
   <%= t.label :title %>
   <%= t.text_field :title %>
-  </br>
-  </br>
-  <%= t.label :name %>
-  <%= t.text_field :name%>
   </br>
   </br>
   <%= t.label :description %>

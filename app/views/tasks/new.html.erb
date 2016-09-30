@@ -1,11 +1,16 @@
-<%= form_for @task do |t| %>
+<h2>CREATE: </h2>
 
-  <%= t.label :title %>
-  <%= t.text_field :title %>
-  </br>
-  </br>
+<p>
+  <%= link_to "Return to Homepage", tasks_path%>
+</p>
+
+<%= form_for @task do |t| %>
   <%= t.label :name %>
   <%= t.text_field :name%>
+  </br>
+  </br>
+  <%= t.label :title %>
+  <%= t.text_field :title %>
   </br>
   </br>
   <%= t.label :description %>
