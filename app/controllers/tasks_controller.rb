@@ -1,26 +1,10 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
-
-    # [
-    #   "Task 1: Eat",
-    #   "Task 2: Sleep",
-    #   "Task 3: Exercise",
-    #   "Task 4: Do homework"
-    # ]
   end
 
   def show
     @task = Task.find(params[:id])
-
-    # @task_details = [
-    #   {name: "Eat" , description: "Eat well" , completion_status: "Yes" , completed_date: "15th Sep 2016"},
-    #   {name: "Sleep" , description: "Sleep well" , completion_status: "No" , completed_date: "16th Sep 2016"},
-    #   {name: "Exercise" , description: "Biking or brisk-walking" , completion_status: "No", completed_date: "18th Sep 2016"},
-    #   {name: "Do homework" , description: "Finish homework of the day" , completion_status: "No", completed_date: "19th Sep 2016" }
-    # ]
-    #
-    # @task_id = params[:id].to_i
   end
 
   def new
@@ -56,12 +40,22 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    
+
     redirect_to tasks_path
   end
+
+  # This method corresponds to the button_to. Nothing will output to the screen. But behind the screen, the completed method will update the Task entry by calling 2 methods in Task model task.rb. If the user clicks on the Details section, he/she will see the changes to Completion Status and Completed At date.
+  def complete
+    @task = Task.find(params[:id])
+    @task.task_completed
+    @task.update_completed_at
+
+    redirect_to tasks_path
+  end
+
   private
 
   def task_params
-    params.require(:task).permit(:title, :name, :description, :completion_status, :completed_at)
+    params.require(:task).permit(:title, :description, :completion_status, :completed_at)
   end
 end

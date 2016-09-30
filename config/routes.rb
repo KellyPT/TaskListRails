@@ -12,10 +12,7 @@ Rails.application.routes.draw do
   post '/tasks' => 'tasks#create'
   get '/tasks/:id', to: 'tasks#show', as: 'task'
 
-  # get '/tasks/1' => 'tasks#show'
-  # get '/tasks/2' => 'tasks#show'
-  # get '/tasks/3' => 'tasks#show'
-  # get '/tasks/4' => 'tasks#show'
+  patch '/tasks/:id/complete', to: 'tasks#complete', as: 'task_complete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
