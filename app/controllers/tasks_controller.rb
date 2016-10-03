@@ -44,7 +44,7 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
-  # This method corresponds to the button_to. Nothing will output to the screen. But behind the screen, the completed method will update the Task entry by calling 2 methods in Task model task.rb. If the user clicks on the Details section, he/she will see the changes to Completion Status and Completed At date.
+  # This method Complete below corresponds to the button_to. Nothing will output to the screen. But behind the scene, the Complete method will update the Task entry by calling 2 methods in Task model task.rb. If the user clicks on the Details section, he/she will see the changes to Completion Status and Completed At date.
   def complete
     @task = Task.find(params[:id])
     @task.task_completed
