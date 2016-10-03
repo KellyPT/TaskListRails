@@ -1,11 +1,11 @@
 class Task < ActiveRecord::Base
   def task_completed
     self.completion_status = true
-    save
+    self.save
   end
 
   def update_completed_at
     self.completed_at = Time.now
-    save
+    self.save
   end
 end
