@@ -1,13 +1,13 @@
 <h2>THIS IS MY TASK LIST</h2>
 
-<%= link_to "Create a new Task entry here", tasks_new_path %>
+<%= link_to "Create a new Task entry here", new_task_path %>
 
 <p>
   <% @tasks.each do |t| %>
   <h3><%= "Task #{t.id}: #{t.title}" %><%= button_to "Completed task? Click here to confirm", task_complete_path(t), :method => :patch %></h3>
 
   <li><%= link_to "Details", task_path(t.id) %></li>
-  <li><%= link_to "Edit", task_edit_path(t) %></li>
+  <li><%= link_to "Edit", edit_task_path(t) %></li>
   <li><%= link_to "Delete", task_delete_path(t) %></li>
   </br>
   <% end %>
