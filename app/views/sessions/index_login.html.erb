@@ -1,0 +1,5 @@
+<h2>HOMEPAGE</h2>
+
+<h4>Login Successful! Welcome, <%= @user.name %>, <%= @user.email %></h4>
+
+<%= button_to "Log out", sessions_path, method: :delete %>

@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, only: [:index_logout, :create, :destroy]
+
   def create
     auth_hash = request.env['omniauth.auth']
     redirect to login_failure_path unless auth_hash['uid']
@@ -10,22 +12,17 @@ class SessionsController < ApplicationController
     end
 
     session[:user_id] = @user.id
-    redirect_to sessions_path
+    redirect_to sessions_login_path
   end
 
-  def index
-    if session[:user_id].nil?
-      redirect_to login_failure_path
-    else
-      @user = User.find(session[:user_id])
-    end
+  def index_login;
+    @user = User.find(session[:user_id])
   end
 
-  def login_failure
-  end
+  def index_logout; end
 
   def destroy
     session.delete(:user_id)
-    redirect_to login_failure_path
+    redirect_to sessions_logout_path
   end
 end
