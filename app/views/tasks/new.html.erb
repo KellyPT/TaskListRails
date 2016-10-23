@@ -4,23 +4,4 @@
   <%= link_to "Return to Homepage", tasks_path%>
 </p>
 
-<%= form_for @task do |t| %>
-  <%= t.label :title %>
-  <%= t.text_field :title %>
-  </br>
-  </br>
-  <%= t.label :description %>
-  <%= t.text_field :description %>
-  </br>
-  </br>
-  <%= t.label :completion_status %>
-  <%= t.text_field :completion_status %>
-  </br>
-  </br>
-  <%= t.label :completed_at %>
-  <%= t.text_field :completed_at %>
-  </br>
-  </br>
-  <%= t.submit "Submit" %>
-
-<% end %>
+<%= render partial: "form", locals: {http_method: :post} %>

@@ -1,0 +1,24 @@
+<%= form_for @task, method: http_method do |t| %>
+
+  <%= t.label :title %>
+  <%= t.text_field :title %>
+  </br>
+  </br>
+  <%= t.label :description %>
+  <%= t.text_field :description %>
+  </br>
+  </br>
+  <%= t.label :completion_status %>
+  <%= t.text_field :completion_status %>
+  </br>
+  </br>
+  <%= t.label :completed_at %>
+  <%= t.date_field :completed_at %>
+  </br>
+  </br>
+  <% if  http_method == :post || http_method == :patch %>
+    <%= t.submit "Submit" %>
+  <% elsif http_method ==  :delete %>
+    <%= t.submit "Delete" %>
+  <% end %>
+<% end %>

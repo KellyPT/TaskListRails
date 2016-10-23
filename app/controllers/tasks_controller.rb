@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  # The 'require_login' action in Application Controller will apply here. Only authenticated user can have access to the below actions.
   def index
     @tasks = Task.all
   end
@@ -50,7 +51,7 @@ class TasksController < ApplicationController
     @task.task_completed
     @task.update_completed_at
 
-    redirect_to tasks_path
+    redirect_to task_path(@task.id)
   end
 
   private

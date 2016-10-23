@@ -2,4 +2,6 @@
 
 <h4>Login Successful! Welcome, <%= @user.name %>, <%= @user.email %></h4>
 
+<%= button_to "See my Tasklist", tasks_path, method: :get %>
+
 <%= button_to "Log out", sessions_path, method: :delete %>

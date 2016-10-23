@@ -4,32 +4,8 @@
   <%= link_to "Return to Homepage", tasks_path %>
 </p>
 
+<p>
+  <strong>If you want to delete this record, read the form carefully and press 'Delete'.</strong>
+</p>
 
-<%= form_for @task, method: :delete do |t|  %>
-  <%= t.label :id %>
-  <%= t.text_field :id %>
-  </br>
-  </br>
-  <%= t.label :title %>
-  <%= t.text_field :title %>
-  </br>
-  </br>
-  <%= t.label :description %>
-  <%= t.text_field :description %>
-  </br>
-  </br>
-  <%= t.label :completion_status %>
-  <%= t.text_field :completion_status %>
-  </br>
-  </br>
-  <%= t.label :completed_at %>
-  <%= t.text_field :completed_at %>
-  </br>
-  </br>
-  <p>
-    <strong>If you want to delete this record, press 'Delete'.</strong>
-  </p>
-
-  <%= t.submit "DELETE" %>
-
-<% end %>
+<%= render partial: "form", locals: { http_method: :delete} %>
