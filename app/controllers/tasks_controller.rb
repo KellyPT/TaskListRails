@@ -7,14 +7,7 @@ class TasksController < ApplicationController
     @tasks = @current_user.tasks
   end
 
-  def show
-    # @task = Task.find(params[:id])
-    # if @task.user_id == session[:user_id]
-    #   @task
-    # else
-    #   render :no_show
-    # end
-  end
+  def show; end
 
   def new
     @task = Task.new
@@ -30,22 +23,9 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
-    # @task = Task.find(params[:id])
-    # if @task.user_id == session[:user_id]
-    #   @task
-    # else
-    #   render :no_show
-    # end
-  end
+  def edit; end
 
   def update
-    # @task = Task.find(params[:id])
-    # if @task.user_id == session[:user_id]
-    #   @task
-    # else
-    #   render :no_show
-    # end
     if @task.update(task_params)
       redirect_to task_path(@task)
     else
@@ -53,23 +33,17 @@ class TasksController < ApplicationController
     end
   end
 
-  def delete
-    # @task = Task.find(params[:id])
-  end
+  def delete; end
 
   def destroy
-    # @task = Task.find(params[:id])
     @task.destroy
-
     redirect_to tasks_path
   end
 
   # This method Complete below corresponds to the button_to. Nothing will output to the screen. But behind the scene, the Complete method will update the Task entry by calling 2 methods in Task model task.rb. If the user clicks on the Details section, he/she will see the changes to Completion Status and Completed At date.
   def complete
-    # @task = Task.find(params[:id])
     @task.task_completed
     @task.update_completed_at
-
     redirect_to task_path(@task.id)
   end
 
@@ -86,7 +60,7 @@ class TasksController < ApplicationController
       render file: "public/404", status: :not_found
     end
 
-    # The following condition will make sure that a logged-in user cannot use index, show, edit, update, delete, destroy, complete actions on tasks that does not belong to them.
+    # The following condition will make sure that a logged-in user CANNOT use 'index', 'show', 'edit', 'update', 'delete', 'destroy', 'complete' actions on tasks that DOES NOT belong to them.
     if @task.user_id == session[:user_id]
       @task
     else
