@@ -1,1 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+grace:
+  name: Grace Hooper
+  email: grace.hooper@adadevelopersacedemy.org
+  uid: 12345
+  provider: github
+ada:
+  name: Ada
+  email: ada@adadevelopersacedemy.org
+  uid: 12346
+  provider: github
+no_articles_user:
+  name: No Articles
+  email: no_articles@gmail.com
+  uid: 67890
+  provider: github
