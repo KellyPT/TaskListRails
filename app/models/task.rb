@@ -1,4 +1,6 @@
 class Task < ActiveRecord::Base
+  belongs_to :user
+
   def task_completed
     self.completion_status = true
     self.save
