@@ -10,12 +10,11 @@ class TasksController < ApplicationController
   def show; end
 
   def new
-    @task = Task.new
+    @task = @current_user.tasks.new
   end
 
   def create
-    @task = Task.new(task_params)
-    @task.user_id = session[:user_id]
+    @task = @current_user.tasks.new(task_params)
     if @task.save
       redirect_to task_path(@task)
     else
