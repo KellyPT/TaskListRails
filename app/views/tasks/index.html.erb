@@ -1,6 +1,8 @@
 <h2>THIS IS MY TASK LIST</h2>
 
-<%= link_to "Create a new Task entry here", new_task_path %>
+<%= button_to "Return to Homepage", sessions_login_path, method: :get %>
+
+<p><%= link_to "Create a new Task entry here", new_task_path %></p>
 
 <p>
   <% @tasks.each do |t| %>
