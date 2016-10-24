@@ -86,6 +86,7 @@ class TasksController < ApplicationController
       render file: "public/404", status: :not_found
     end
 
+    # The following condition will make sure that a logged-in user cannot use index, show, edit, update, delete, destroy, complete actions on tasks that does not belong to them.
     if @task.user_id == session[:user_id]
       @task
     else
