@@ -1,11 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyString
-  completion_status: MyString
+grace_task_1:
+  title: task_1
+  description: Task 1 belongs to Grace
+  completion_status: true
+  user: grace
 
-two:
-  title: MyString
-  description: MyString
-  completion_status: MyString
+grace_task_2:
+  title: task_2
+  description: Task 2 belongs to Grace
+  completion_status: true
+  user: grace
+
+ada_task_1:
+  title: task_1
+  description: Task 1 belongs to Ada
+  completion_status: true
+  user: ada
